@@ -58,8 +58,10 @@ const fitnessProgressData = [
     },
     // Add more fitness progress items as needed
   ];
+
+
 export default function Rewards() {
-    const [progress, setProgress] = React.useState(45);
+    const progress= 45;
     let currentDate = new Date()
     // Getting individual components of the date
     let year = currentDate.getFullYear();
@@ -84,14 +86,14 @@ export default function Rewards() {
             <div className='w-[60%] h-[60vh] overflow-y-scroll scrollbar-hide shadow-lg rounded-xl border-2 border-[#e4e3e3]'>
 
                 {fitnessProgressData.map((item, index) => (
-                    <div key={index} className='bg-white shadow-xl gap-3 flex rounded-lg mx-10 mt-5 mb-10 justify-between items-center'>
+                    <div key={index} className='bg-white shadow-xl gap-3 px-4 flex rounded-lg mx-10 mt-5 mb-10 justify-between items-center'>
                         <img src={item.img} alt="" className='w-48 h-48 rounded-l-md'/>
                         <div className=' py-5'>
                             <div className='text-xl font-semibold'>{item.heading}</div>
                             <div className='text-lg'>{item.description}</div>
                         </div>
                         <div className='text-center'>
-                            <p className='mx-3'>{item.reward}</p>
+                            <p className='mx-3 font-extrabold text-2xl'>{item.reward}</p>
                             <p>Points Granted</p>
                         </div>
                     </div>

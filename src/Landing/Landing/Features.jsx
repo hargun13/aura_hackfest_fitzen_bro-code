@@ -1,7 +1,7 @@
 import React from 'react'
-import ap from './always_protected.png'
-import fs from './free_shipping.png'
-import gr from './get_reward.png'
+import { IoIosFitness} from "react-icons/io";
+import MonitorHeartIcon from '@mui/icons-material/MonitorHeart';
+import { AiOutlineSafetyCertificate } from "react-icons/ai";
 import nhf from './no_hidden_fees.png'
 
 const Features = () => {
@@ -11,22 +11,22 @@ const Features = () => {
 
     const data = [
         {
-            logo: ap,
+            logo: <IoIosFitness size={40}/>,
             heading: "Interactive Fitness Plans",
-            content: "Engaging users with interactive fitness plans that make achieving wellness goals a fun and enjoyable experience."
+            content: "Engaging users with interactive and fun fitness plans that make achieving wellness goals a fun and enjoyable experience."
         },
         {
-            logo: gr,
+            logo: <MonitorHeartIcon fontSize='large'  />,
             heading: "Real-time Health Tracking",
             content: "Providing users with real-time health updates and tracking tools, empowering them to make informed choices for their well-being."
         },
         {
             logo: nhf,
             heading: "Rewarding Achievements",
-            content: "Creating a sense of accomplishment and motivation by incorporating challenges and a rewards system for achieving fitness milestones."
+            content: "Creating a sense of accomplishment and motivation through challenges, rewards system to achieve fitness milestones."
         },
         {
-            logo: fs,
+            logo: <AiOutlineSafetyCertificate size={40}/>,
             heading: "Certificates and Badges",
             content: "Offering tangible recognition of their fitness achievements with certificates and badges upon reaching health and wellness milestones."
         },
@@ -43,7 +43,7 @@ const Features = () => {
 
             <div className='mx-5 p-6 bg-white rounded-2xl transition duration-700 hover:-translate-y-3 hover:bg-[#1976D2] hover:text-white group shadow-2xl'>
 
-                <img src={data.logo} alt="card depiction" className='h-16 mb-5' />
+                {data.logo === nhf ? <img src={data.logo} className='h-12'/> : <span>{data.logo}</span>}
                 <h1 className='text-2xl font-bold my-5'>{data.heading}</h1>
                 <p className=' text-lg font-bold italic text-gray-300 transition duration-700 group-hover:text-white'>{data.content}</p>
 

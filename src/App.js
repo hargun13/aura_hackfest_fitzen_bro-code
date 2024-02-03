@@ -16,7 +16,7 @@ import Chatbot from './Main/MentalHealth/Chatbot';
 import LiveTherapy from './Main/MentalHealth/LiveTherapy';
 import Rewards from './Main/Rewards/Rewards';
 import Exercises from './Main/Exercise/Exercises';
-import Main from './Main/Exercise/Main'; //exercises
+import ExerciseMain from './Main/Exercise/ExerciseMain'; //exercises
 import AIMealPlan from './Main/AIMealPlan';
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
           <Route path='/mental-health/therapy' element={<LiveTherapy/>} />
           <Route path='/rewards' element={<Rewards/>} />
           <Route path='/exercise' element={<Exercises />} />
-          <Route path='/exercise/bicep-curls' element={<Main />} />
+          <Route path='/exercise/:exerciseId' element={<ExerciseMain />} />
           <Route path='/meal-plan' element={<AIMealPlan />} />
         </Routes>
       </AuthContextProvider>

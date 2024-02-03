@@ -19,6 +19,7 @@ function CircularProgressWithLabel(props) {
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius:'100%',
+          border:'2px',
           boxShadow:'2px 2px 2px 2px rgba(0, 0, 0, 0.2)'
         }}
       >
@@ -38,32 +39,32 @@ const MainDash = () => {
   const [userData, setUserData] = useState(null);
   const [status, setStatus] = useState('');
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://0313-2409-40c0-28-33dd-c481-44de-4015-4df9.ngrok-free.app/get');
-        const result = response.data;
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const response = await axios.get('https://0313-2409-40c0-28-33dd-c481-44de-4015-4df9.ngrok-free.app/get');
+  //       const result = response.data;
 
-        if (result.status === 'success') {
-          setUserData(result.data[0]);
-          setStatus(result.status);
-        } else {
-          // Handle error status
-          setStatus(result.status);
-        }
-      } catch (error) {
-        // Handle fetch error
-        console.error('Error fetching data:', error.message);
-      }
-    };
+  //       if (result.status === 'success') {
+  //         setUserData(result.data[0]);
+  //         setStatus(result.status);
+  //       } else {
+  //         // Handle error status
+  //         setStatus(result.status);
+  //       }
+  //     } catch (error) {
+  //       // Handle fetch error
+  //       console.error('Error fetching data:', error.message);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
   
-  console.log(userData)
+  // console.log(userData)
 
   return (
-    <div className='flex items-center justify-center w-full h-[86vh] p-8'>
+    <div className='flex items-center justify-center w-full h-[86vh] p-8 bg-[#f7f7f7]'>
       {/* First Section */}
       <div className='w-[33%] h-full flex items-center justify-around flex-col '>
 

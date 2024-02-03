@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-// import { RoleProvider } from './Login_Signup/roleContext'
+import { ExerciseIdProvider } from './Main/Exercise/ExerciseID_context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    {/* <RoleProvider> */}
+    <ExerciseIdProvider>
       <App />
-    {/* </RoleProvider> */}
+    </ExerciseIdProvider>
   </BrowserRouter>
 );
 

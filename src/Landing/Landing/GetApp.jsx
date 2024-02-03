@@ -9,13 +9,13 @@ const GetApp = () => {
 
 
   return (
-    <div style={{backgroundImage: `url(${bag2})`, backgroundSize:'cover'}} className='items-center justify-center flex flex-col py-20 bg-[#72e485]'>
+    <div style={{backgroundImage: `url(${bag2})`, backgroundSize:'cover'}} className='items-center justify-center flex flex-col py-20 bg-[#A0BDFF]'>
         
         <div>
 
-            <h1 className='text-center text-3xl md:text-4xl font-bold leading-[60px]'>Get Straddle App on Google<br /> Play or App Store</h1>
+            <h1 className='text-center text-3xl md:text-4xl font-bold leading-[60px]'>Get FitZen App on Google<br /> Play or App Store</h1>
 
-            <p className='font-medium italic text-center py-10'>Build your financial literacy within a transparent community.<br /> Follow other investors, learn and share insights with people.</p>
+            <p className='font-medium italic text-center py-10'>Achieve your fitness goals with ease. Through our fitness app, <br/>you can track and manage your health effortlessly.</p>
 
             <div className='flex items-center justify-center gap-10'>
                 <img src={playstore} alt='playstore' className='h-10'/>

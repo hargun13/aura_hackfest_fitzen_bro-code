@@ -59,7 +59,7 @@ export default function Sidebar() {
                 >
                     <SidebarList onCloseDrawer={toggleDrawer(false)}/> {/* pass a reference dont invoke it */}
                 </Drawer>
-                <img src={logo} alt="intellihealth logo" className='h-[40px]'/>
+                <img src={logo} alt="logo" className='h-[40px]'/>
             </div>
 
 

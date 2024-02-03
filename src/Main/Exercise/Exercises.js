@@ -1,21 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { ExerciseID_context } from './ExerciseID_context';
 
 const Exercises = () => {
+
+  const { setExerciseId } = useContext(ExerciseID_context);
+  const navigate = useNavigate();
+
+  const handleClick = (exercise_id) => {
+    setExerciseId(exercise_id)
+    navigate(`/exercise/${exercise_id}`)
+  }
+
+
   // Exercise data
   const exercisesData = [
     {
+      id: 1,
       title: 'Bicep Curls',
       image: 'https://images.pexels.com/photos/3763115/pexels-photo-3763115.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       description: 'Perform 3 sets of 12 reps',
     },
     {
+      id: 2,
       title: 'Pushups',
       image: 'https://images.pexels.com/photos/14623737/pexels-photo-14623737.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       description: 'Complete 4 sets of 15 reps',
     },
     {
+      id: 3,
       title: 'Shoulder Presses',
       image: 'https://images.pexels.com/photos/6550851/pexels-photo-6550851.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       description: 'Do 3 sets of 10 reps with moderate weight',
@@ -29,7 +44,7 @@ const Exercises = () => {
         <p className="text-lg italic px-10 pb-5 text-center">Effortless Tracking for a Healthier You</p>
       </div>
 
-      <div className='flex flex-wrap gap-5 items-center justify-around w-full mt-6'>
+      <div className='flex flex-wrap gap-5 items-center justify-around w-full my-6 '>
         {/* Map through exercisesData to create cards */}
         {exercisesData.map((exercise, index) => (
             <div
@@ -49,10 +64,8 @@ const Exercises = () => {
 
                 <p className="my-6 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">{exercise.description}</p>
 
-                {/* Use exercise.title for the Link */}
-                <Link to={`/exercise/${exercise.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                <Button variant="contained">Explore</Button>
-                </Link>
+                {/* Add the navigation handler */}
+                <Button variant="contained" onClick={() => handleClick(exercise.id)}>Explore</Button>
             </div>
             </div>
         ))}

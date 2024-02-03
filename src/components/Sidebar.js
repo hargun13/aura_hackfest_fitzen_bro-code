@@ -107,20 +107,6 @@ export default function Sidebar({setLogin}) {
         }
     }, [redirectUrl, navigate])
 
-    // const pages = ["community", "education", "blogs", "videos", "insurance", "schemes" ];
-    // const urls = {
-    //     community: "/community",
-    //     education: "/education",
-    //     blogs: "/blog",
-    //     videos: "/edvideo",
-    //     insurance: "/insurance",
-    //     schemes: "/schemes",
-    // };
-
-    // if (!SpeechRecognition.browserSupportsSpeechRecognition()) {
-    //     return null;
-    // }
-
   
     const list = () => {
         
